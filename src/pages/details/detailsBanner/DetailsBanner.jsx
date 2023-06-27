@@ -57,8 +57,8 @@ const DetailsBanner = ({ video, crew }) => {
                             <ContentWrapper>
                                 <div className="content">
                                     <div className="left">
-                                        {data.poster_path ? (
-                                            <Img className="posterImg" src={url.backdrop + data.poster_path} />
+                                        {data?.poster_path ? (
+                                            <Img className="posterImg" src={url.backdrop + data?.poster_path} />
                                         ) :
                                             (
                                                 <Img className="posterImg" src={PosterFallback} />
@@ -66,17 +66,17 @@ const DetailsBanner = ({ video, crew }) => {
                                     </div>
                                     <div className="right">
                                         <div className="title">
-                                            {data.name || data.title + ` (${dayjs(data.release_date).format("YYYY")})`}
+                                            {data?.name || data?.title + ` (${dayjs(data?.release_date).format("YYYY")})`}
                                         </div>
 
                                         <div className="subtitle">
-                                            {data.tagline}
+                                            {data?.tagline}
                                         </div>
 
                                         <Genres data={_genres} />
 
                                         <div className="row">
-                                            <CircleRating rating={data.vote_average.toFixed(1)} />
+                                            <CircleRating rating={data?.vote_average.toFixed(1)} />
                                             <div className="playbtn" onClick={() => {
                                                 setShow(true)
                                                 setVideoId(trailer?.key)
@@ -89,11 +89,11 @@ const DetailsBanner = ({ video, crew }) => {
                                         <div className="watchOn">
                                             {platform?.length>0 && <div className="heading">Watch it on: </div>}
                                             {platform?.map((item,index)=>{
-                                                const watchLogo = item.logo_path ? url.profile + item.logo_path : PosterFallback
+                                                const watchLogo = item?.logo_path ? url.profile + item?.logo_path : PosterFallback
                                                return (
                                                 <div className="providers" key = {index}>
                                                     <Img src = {watchLogo}/>
-                                                    <div className="provider_name">{item.provider_name}</div>
+                                                    <div className="provider_name">{item?.provider_name}</div>
                                                 </div>
                                                )
                                             })}
