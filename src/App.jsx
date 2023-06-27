@@ -16,7 +16,7 @@ import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import SearchResult from './pages/searchResult/SearchResult'
 import Details from './pages/details/Details'
-import PageNotFound from './pages/404/pageNotFound'
+import PageNotFound from './pages/404/PageNotFound'
 import Explore from './pages/explore/Explore'
 
 
